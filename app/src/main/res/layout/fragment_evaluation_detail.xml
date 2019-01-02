@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/evaluation_detial" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_38">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/edge_margin">
+
+
+                    <ImageView
+                        android:id="@+id/iv_user_headerimg"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:text="我的名字"
+                        android:textColor="@color/material_grey_1000"
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/iv_user_headerimg"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/iv_user_headerimg"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:text="dsdsdsdsdsdsdsdsdsd"
+                        android:textColor="@color/text_times"
+                        android:textSize="@dimen/dp_10"
+                        android:id="@+id/tv_evaluate_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_below="@+id/tv_user_name"
+                        android:layout_marginTop="5dp" />
+
+                    <LinearLayout
+                        android:layout_alignBaseline="@+id/tv_user_name"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/edge_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/sb_evaluate"
+                            android:layout_toLeftOf="@+id/sb_evaluate"
+                            android:text="评分" />
+
+                        <com.carsuper.coahr.widgets.StarBar
+                            android:id="@+id/sb_evaluate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:starCount="5"
+                            app:starDistance="5dp"
+                            app:starEmpty="@mipmap/star_empty"
+                            app:starFill="@mipmap/star_fill"
+                            app:starSize="@dimen/dp_10" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/time_bottom_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_below="@+id/tv_evaluate_time"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:background="@color/material_grey_200" />
+                    <TextView
+                        android:layout_below="@+id/time_bottom_line"
+                        android:text="dsdsdsdsdsdsdsdsd"
+                        android:textColor="@color/commodity_dim_color"
+                        android:id="@+id/tv_evaluate_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:textSize="@dimen/dp_12" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_evaluate_pushimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:visibility="gone"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_below="@+id/tv_evaluate_message" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/text0"
+                    android:layout_marginTop="2dp"
+                    android:padding="@dimen/edge_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:text="@string/commodity_been_buy" />
+
+                <RelativeLayout
+                    android:background="@drawable/bg_fff_background"
+                    android:visibility="gone"
+                    android:id="@+id/my_shopping"
+                    android:padding="@dimen/edge_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_commodity_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:id="@+id/tv_commodity_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/iv_commodity_img"
+                        android:layout_toRightOf="@+id/iv_commodity_img" />
+
+                    <com.carsuper.coahr.widgets.OriginalPriceTextView
+                        android:id="@+id/opt_commodity_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/tv_now_proce"
+                        android:layout_alignLeft="@+id/tv_commodity_info" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_now_proce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/iv_commodity_img"
+                        android:layout_alignLeft="@+id/tv_commodity_info" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_buy_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_alignBottom="@+id/iv_commodity_img"
+                        android:layout_toRightOf="@+id/tv_now_proce" />
+                </RelativeLayout>
+                 <TextView
+                     android:textSize="@dimen/dp_14"
+                     android:id="@+id/no_shopping"
+                     android:text="暂无购买商品"
+                     android:visibility="visible"
+                     android:background="@drawable/bg_fff_background"
+                     android:padding="@dimen/edge_margin"
+                     android:layout_gravity="center_horizontal"
+                     android:gravity="center"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_hole_evaluation_count"
+                    android:padding="@dimen/edge_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:text="全部评论" />
+                <android.support.v7.widget.RecyclerView
+                    android:background="@drawable/bg_fff_background"
+                    android:visibility="invisible"
+                    android:id="@+id/rv_evaluation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/material_white"
+                android:layout_weight="1"
+                android:background="@color/material_blue_600"
+                android:gravity="center"
+                android:text="@string/comments" />
+
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_zan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textColor="@color/material_white"
+                android:background="@color/material_red_600"
+                android:gravity="center"
+                android:text="点赞" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

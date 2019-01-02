@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/commodity_detail" />
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tbl_commodity_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/material_grey_700"
+        app:tabMode="fixed">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/commodity" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comments" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggestion" />
+    </android.support.design.widget.TabLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.carsuper.coahr.widgets.MyNestedScrollView
+            android:id="@+id/scv_commodity_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_background_color"
+                android:orientation="vertical">
+               <!-- <FrameLayout
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/topFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">-->
+                    <com.donkingliang.banner.CustomBanner
+                        android:id="@+id/customBanner"
+                        android:background="@drawable/bg_fff_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+               <!-- </FrameLayout>-->
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_commodity_info"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:paddingLeft="@dimen/edge_margin"
+                    android:paddingRight="@dimen/edge_margin" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingLeft="@dimen/edge_margin"
+                    android:paddingRight="@dimen/edge_margin">
+
+                    <TextView
+                        android:id="@+id/tv_commodity_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                        android:textColor="@color/prominent_text_color" />
+
+                    <com.carsuper.coahr.widgets.CommodityCountView
+                        android:id="@+id/ccv_commodity_count"
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/commodityCountView_width"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_transport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_5dp"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingLeft="@dimen/edge_margin"
+                    android:paddingRight="@dimen/edge_margin">
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_transport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="送至" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_user_receiving_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tv_transport"
+                        android:drawableLeft="@mipmap/place"
+                        android:text="@string/no_address" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/right" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_commodity_evaluate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_red" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/evaluation_for_commodity" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_blue" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_no_evaluation"
+                    android:text="暂无评价"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:background="@drawable/bg_fff_background"
+                    android:padding="@dimen/edge_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_evaluation"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingLeft="@dimen/edge_margin"
+                    android:paddingRight="@dimen/edge_margin">
+
+                    <ImageView
+                        android:id="@+id/iv_user_headerimg"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_12"
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignTop="@+id/iv_user_headerimg"
+                        android:layout_toRightOf="@+id/iv_user_headerimg" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_10"
+                        android:textColor="@color/text_times"
+                        android:id="@+id/tv_evaluate_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_below="@+id/tv_user_name" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignBaseline="@+id/iv_user_headerimg"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="评分" />
+
+                        <com.carsuper.coahr.widgets.StarBar
+                            android:id="@+id/sb_evaluate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_gravity="center_vertical"
+                            app:starCount="5"
+                            app:starDistance="5dp"
+                            app:starEmpty="@mipmap/star_empty"
+                            app:starFill="@mipmap/star_fill"
+                            app:starSize="@dimen/dp_10" />
+                    </LinearLayout>
+            <View
+                android:id="@+id/line_time"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="match_parent"
+                android:layout_alignLeft="@+id/tv_user_name"
+                android:background="@color/material_grey_200"
+                android:layout_below="@+id/tv_evaluate_time"
+                android:layout_height="1sp"/>
+                    <TextView
+                        android:textSize="@dimen/dp_12"
+                        android:textColor="@color/commodity_dim_color"
+                        android:id="@+id/tv_evaluate_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_below="@+id/line_time" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_evaluate_pushimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_5"
+                        android:visibility="gone"
+                        android:layout_alignLeft="@+id/tv_user_name"
+                        android:layout_below="@+id/tv_evaluate_message"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_more_evaluate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rv_evaluate_pushimg"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_red_frame_background"
+                        android:textColor="@color/material_red_300" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_commodity_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                    android:background="@drawable/bg_fff_background"
+                    android:padding="@dimen/dp_10"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_red" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/product_detail" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_blue" />
+                </LinearLayout>
+                <FrameLayout
+                    android:id="@+id/fragment_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_fff_background"
+                        android:id="@+id/rv_commodity_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_commodity_suggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                    android:background="@drawable/bg_fff_background"
+                    android:padding="@dimen/dp_10"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_red" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/suggestion_collocation" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/line_blue" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_recommended_collocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/app_background_color"
+                        android:nestedScrollingEnabled="false" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </com.carsuper.coahr.widgets.MyNestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_immediately_pay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/material_white"
+                android:background="@color/material_blue_600"
+                android:gravity="center"
+                android:text="@string/immediately_pay" />
+
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_put_in_shoppingcart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="加入购物车"
+                android:layout_weight="1"
+                android:textColor="@color/material_white"
+                android:background="@color/material_red_600"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

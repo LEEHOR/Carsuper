@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/coupon_Receive_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="领取优惠券"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_textBlack_dividers"/>
+    <com.carsuper.coahr.widgets.MyPtrFrameLayout
+        android:id="@+id/PtrFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/coupon_Receive_recycler"
+            android:layout_width="match_parent"
+           android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </com.carsuper.coahr.widgets.MyPtrFrameLayout>
+    <Button
+        android:id="@+id/go_receive_coupon"
+        android:background="@color/prominent_text_color"
+        android:textColor="@color/material_white"
+        android:textSize="@dimen/dp_14"
+        android:text="@string/coupon1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

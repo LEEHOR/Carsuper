@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_commodity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:padding="@dimen/edge_margin"
+    android:background="@drawable/bg_fff_background"
+    android:elevation="10dp">
+
+    <CheckBox
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/checkbox_beautiful_selector"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:button="@null" />
+
+
+    <ImageView
+        android:id="@+id/iv_commodity_img"
+        android:layout_toRightOf="@+id/tv_check"
+        android:layout_width="@dimen/commodity_info_img_dimen"
+        android:layout_height="@dimen/commodity_info_img_dimen"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_commodity_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/iv_commodity_img"
+        android:textColor="@color/important_text_color"/>
+
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_commodity_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_commodity_img"
+        android:layout_alignLeft="@+id/tv_commodity_info"
+        android:layout_marginTop="12.5dp"
+        android:textColor="@color/prominent_text_color" />
+
+    <com.carsuper.coahr.widgets.CommodityCountView
+        android:id="@+id/ccv_commodity_count"
+        android:layout_width="@dimen/commodityCountView_width"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_commodity_price"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/secondary_text_color" />
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_commodity"
+    app:cardBackgroundColor="@color/material_grey_1100"
+    android:layout_width="@dimen/commodity_recyclerview_item_height"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_commodity_img"
+        android:layout_width="@dimen/commodity_recyclerview_item_height"
+        android:layout_height="@dimen/commodity_recyclerview_item_height"
+        android:src="@mipmap/primary"
+        />
+    <TextView
+        android:id="@+id/tv_commodity_info"
+        android:layout_below="@+id/iv_commodity_img"
+        android:layout_alignRight="@+id/iv_commodity_img"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="@dimen/dp_12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <com.carsuper.coahr.widgets.OriginalPriceTextView
+        android:id="@+id/tv_commodity_originalprice"
+        android:layout_below="@+id/tv_commodity_info"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="@dimen/dp_12"
+        android:paddingLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        />
+
+    <TextView
+        android:textSize="@dimen/dp_12"
+        android:paddingLeft="@dimen/dp_5"
+        android:id="@+id/tv_commodity_price"
+        android:layout_below="@id/tv_commodity_originalprice"
+        android:textColor="@color/prominent_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</FrameLayout>

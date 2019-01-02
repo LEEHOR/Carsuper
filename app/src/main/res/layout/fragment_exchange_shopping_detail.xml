@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/material_grey_200"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:orientation="vertical">
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/exchange_detail_title"
+        app:tittle="商品信息"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.donkingliang.banner.CustomBanner
+            android:id="@+id/exchange_detail_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/material_grey_200"/>
+        <TextView
+            android:id="@+id/exchange_detail_describe"
+            android:background="@color/white"
+            android:padding="@dimen/dp_10"
+            android:textSize="@dimen/dp_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:padding="@dimen/dp_10"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/exchange_detail_price"
+            android:textColor="@color/red_ea3340"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text1"
+                android:text="宝石"
+                android:textSize="@dimen/dp_14"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/exchange_detail_price"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_toRightOf="@+id/text1"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/precious_stone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+           <!-- <com.carsuper.coahr.widgets.CommodityCountView
+                android:id="@+id/exchange_count"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="wrap_content"/>-->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_exchange_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@drawable/bg_fff_background"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@mipmap/line_red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="产品详情"
+                android:textSize="@dimen/dp_14" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@mipmap/line_blue" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/exchange_detail_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_exchange"
+        android:gravity="center"
+        android:background="@drawable/bg_bule500_frame_exchange_background"
+        android:padding="@dimen/dp_14"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/dp_10"
+        android:textColor="@color/white"
+        android:text="立即兑换"
+        android:layout_height="@dimen/dp_40" />
+</FrameLayout>

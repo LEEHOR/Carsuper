@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fff_background"
+    android:padding="@dimen/edge_margin">
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_telephone"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_address"
+        android:layout_below="@+id/tv_user_name"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <View
+
+        android:id="@+id/line"
+        android:layout_below="@id/tv_address"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/material_black"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+
+
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_primary_address"
+        android:button="@null"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/line"
+        android:text="设为默认地址"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:drawableLeft="@mipmap/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_delete"
+        android:text="@string/delete"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tv_primary_address"
+        android:background="@drawable/bg_red_frame_background"
+        android:textColor="@color/prominent_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_edit"
+        android:text="编辑"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:layout_toLeftOf="@+id/tv_delete"
+        android:layout_alignTop="@+id/tv_primary_address"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/bg_red_frame_background"
+        android:textColor="@color/prominent_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

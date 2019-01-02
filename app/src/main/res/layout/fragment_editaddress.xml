@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        app:tittle="地址编辑"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/text0"
+            android:text="收货人"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/et_reciever"
+            android:hint="请输入收货人姓名"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:layout_toRightOf="@+id/text0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/text1"
+            android:text="联系方式"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/et_contact"
+            android:hint="请输入您的手机号"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:inputType="number"
+            android:maxEms="11"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:layout_toRightOf="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/text2"
+            android:text="详细地址"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/et_address"
+            android:hint="请输入您的地址"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:layout_toRightOf="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+    <Button
+
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/bt_submit"
+        android:text="确认"
+        android:clickable="false"
+        android:textColor="@color/material_white"
+        android:background="@color/material_grey_500"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edge_margin"/>
+</LinearLayout>

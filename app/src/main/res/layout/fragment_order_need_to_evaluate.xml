@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tittle="@string/need_to_evaluate" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="等待您的评价" />
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/need_evaluate" />
+                </RelativeLayout>
+
+
+                <include layout="@layout/layout_item_order_info" />
+
+                <include layout="@layout/layout_item_receiver_info" />
+
+                <include layout="@layout/layout_item_logistics_info" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_commodity_list"
+                    android:padding="@dimen/edge_margin"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_fff_background"
+            android:paddingRight="@dimen/edge_margin"
+            android:paddingLeft="@dimen/edge_margin"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/text0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Total_price" />
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_totalprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/prominent_text_color"
+                android:layout_toRightOf="@+id/text0" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/tv_totalprice"
+                android:text="@string/send_price" />
+
+            <TextView
+                android:id="@+id/tv_send_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/prominent_text_color"
+
+                android:layout_toRightOf="@id/text1" />
+
+            <TextView
+                android:id="@+id/tv_need_to_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/prominent_text_color"
+
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_need_to_pay"
+                android:text="@string/how_much_to_pay" />
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_goto_evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="@dimen/dp_4"
+                android:textColor="@color/prominent_text_color"
+                android:background="@drawable/bg_red_frame_background"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/text2"
+                android:text="@string/goto_evaluate" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

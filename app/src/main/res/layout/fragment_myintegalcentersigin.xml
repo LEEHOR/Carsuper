@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="我的积分" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/jf_bg">
+
+        <ImageView
+            android:id="@+id/iv_myhead"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_white_circle_background"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/primary" />
+
+        <LinearLayout
+            android:id="@+id/line_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_myhead"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_bule900_circle_frame_background"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="5dp"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@mipmap/integration" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:text="@string/my_scoreion"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dp_14" />
+
+            <TextView
+                android:id="@+id/tv_myscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="500"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dp_14" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@+id/iv_myhead"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/line_score"
+            android:src="@mipmap/right_rough" />
+
+        <TextView
+
+            android:id="@+id/tv_signins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_myhead"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_right"
+            android:background="@drawable/bg_sign_in"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="点击签到 +2"
+            android:textColor="@color/material_blue_900"
+            android:textSize="@dimen/dp_12" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/material_grey_100" />
+
+    <com.carsuper.coahr.widgets.MyNestedScrollView
+        android:id="@+id/scv_store_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_commodity_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fff_background"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="15dp"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/more_score"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/p1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/p01"/>
+
+                <ImageView
+                    android:id="@+id/p2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/p02"
+                    android:layout_marginTop="@dimen/dp_5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_exchange_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                android:background="@drawable/bg_fff_background"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@mipmap/line_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="我的礼券"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@mipmap/line_blue" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/exchange_shopping_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </com.carsuper.coahr.widgets.MyNestedScrollView>
+</LinearLayout>

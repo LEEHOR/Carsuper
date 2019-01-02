@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/m_bg"
+            android:paddingTop="@dimen/dp_10">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_user_headerimg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/primary" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_user_headerimg" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_integration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_user_name"
+                    android:layout_below="@+id/tv_user_name"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@mipmap/integration" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_integration"
+                    android:text="点击头像登录"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/edge_margin"
+                android:src="@mipmap/message"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_message"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_toLeftOf="@+id/iv_message"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/set_w" />
+
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/edge_margin"
+                android:background="@drawable/bg_sign_in"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableRight="@mipmap/clock"
+                android:paddingBottom="5dp"
+                android:paddingLeft="@dimen/edge_margin"
+                android:paddingTop="5dp"
+                android:text="@string/already_signin" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:padding="@dimen/dp_10"
+        android:paddingLeft="@dimen/edge_margin"
+        android:paddingRight="@dimen/edge_margin"
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/text0"
+            android:text="@string/my_commodity_order"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_all_commodityorder"
+            android:text="@string/all"
+            android:drawableRight="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/my_shoping_order_count"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_needtopay"
+            android:text="@string/need_to_pay"
+            android:drawableTop="@mipmap/dfk"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_needtosend"
+            android:text="@string/need_to_send"
+            android:drawableTop="@mipmap/dfh"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_needtorecieve"
+            android:text="@string/need_to_recieve"
+            android:drawableTop="@mipmap/dsh"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_needtoevaluate"
+            android:text="@string/need_to_evaluate"
+            android:drawableTop="@mipmap/dpj"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_return_change"
+            android:text="@string/return_change"
+            android:drawableTop="@mipmap/thh"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <GridLayout
+        android:columnCount="4"
+        android:rowCount="2"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_fff_background"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_maintanceorder"
+            android:text="@string/maintance_order"
+            android:drawableTop="@mipmap/indent"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_shopping_cart"
+            android:text="@string/shopping_cart"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/shopping_cart_d"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_coupon"
+            android:text="@string/Coupon"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/coupons"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_receiving_address"
+            android:text="@string/recieveinig_address"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/add"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_lovely_car"
+            android:text="@string/my_lovely_car"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/car_m"
+            android:layout_columnWeight="1"
+            android:gravity="center_horizontal"
+            android:layout_gravity="fill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_myscore"
+            android:text="@string/my_score"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/integral"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_opinions"
+            android:text="@string/opinions"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/suggestion"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_invitation"
+            android:text="@string/gift_for_invitation"
+            android:padding="@dimen/edge_margin"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/present_m"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </GridLayout>
+
+    <com.donkingliang.banner.CustomBanner
+        android:id="@+id/iv_advertisement"
+        android:scaleType="fitCenter"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

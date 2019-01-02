@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fff_background">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:id="@+id/coupon_Left"
+        android:layout_width="100dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/doue_coupon"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/coupon_overdue_tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="￥180"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"
+                android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/coupon_overdue_tv_used"
+                android:layout_below="@+id/coupon_overdue_tv_price"
+               android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center"
+                android:textSize="@dimen/dp_10"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:text="@string/coupon_Overdue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/coupon_Left"
+        android:layout_alignTop="@+id/coupon_Left"
+        android:layout_alignBottom="@+id/coupon_Left"
+        android:padding="@dimen/edge_margin"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/coupon_overdue_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="hahhaaahha"
+                    android:textSize="@dimen/dp_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textColor="@color/cp_color_gray" />
+                <TextView
+                    android:id="@+id/coupon_overdue_tv_expiretime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="hahhaaahha"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/dp_10"
+                    android:textColor="@color/cp_color_gray" />
+                <TextView
+                    android:id="@+id/coupon_overdue_tv_discription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="hahhaaahha"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/dp_12"
+                    android:textColor="@color/cp_color_gray" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fff_background"
+    android:padding="@dimen/edge_margin">
+
+
+    <ImageView
+        android:id="@+id/iv_user_headerimg"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:textSize="@dimen/dp_12"
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/iv_user_headerimg"
+        android:layout_toRightOf="@+id/iv_user_headerimg" />
+
+    <TextView
+
+        android:textSize="@dimen/dp_10"
+        android:textColor="@color/text_times"
+        android:id="@+id/tv_evaluate_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@+id/tv_user_name" />
+    <View
+        android:id="@+id/time_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_below="@+id/tv_evaluate_time"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/material_grey_200" />
+
+    <TextView
+
+        android:textSize="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/cp_color_gray_deep"
+        android:id="@+id/tv_evaluate_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@+id/time_bottom_line" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_12"
+        android:id="@+id/tv_zan"
+        android:layout_below="@+id/tv_evaluate_message"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@mipmap/zan"
+        android:layout_marginRight="@dimen/edge_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

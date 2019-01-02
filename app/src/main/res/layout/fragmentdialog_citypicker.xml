@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+            android:id="@+id/tb_tittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tittle="@string/select_city" />
+
+        <EditText
+            android:id="@+id/et_search"
+            style="@style/Searchbar_hint_left"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:hint="@string/search" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cp_city_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+
+
+            <!--右侧字母导航-->
+            <com.carsuper.coahr.widgets.SideBar
+                android:id="@+id/cp_side_index_bar"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_dialog"
+        android:layout_gravity="center"
+        android:background="@color/material_grey_500"
+        android:textColor="@color/text_686868"
+        android:textSize="@dimen/dp_20"
+        android:visibility="gone"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+</FrameLayout>

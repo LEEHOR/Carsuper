@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+  <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+      android:id="@+id/tb_tittle"
+      app:tittle="@string/setting"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_personal_setting"
+        android:layout_below="@+id/tb_tittle"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/grsz"
+            android:text="@string/personal_setting"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/edge_margin" />
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_push_toggle"
+        android:layout_below="@+id/rl_personal_setting"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_fff_background">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/ts"
+            android:padding="@dimen/edge_margin"
+            android:text="@string/push_toggle" />
+
+        <Switch
+            android:id="@+id/switch_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_score"
+        android:visibility="gone"
+        android:layout_below="@+id/rl_push_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_fff_background">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/pf"
+            android:padding="@dimen/edge_margin"
+            android:text="@string/score_forus" />
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_clearcache"
+        android:layout_below="@+id/rl_score"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_fff_background">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/qs"
+            android:padding="@dimen/edge_margin"
+            android:text="@string/clear_cache" />
+
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_cache"
+            android:layout_toLeftOf="@+id/image2"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_joinus"
+        android:background="@drawable/bg_fff_background"
+        android:layout_below="@+id/rl_clearcache"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_height="55dp">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/zsjm"
+            android:padding="@dimen/edge_margin"
+            android:text="@string/join_us" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_about_ksuper"
+        android:layout_below="@+id/rl_joinus"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_fff_background">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/carsuper"
+            android:padding="@dimen/edge_margin"
+            android:text="@string/about_ksuper" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/edge_margin" />
+    </RelativeLayout>
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_loginout"
+        android:text="@string/exist_user"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="@color/material_blue_800"
+        android:textColor="@color/material_white"
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

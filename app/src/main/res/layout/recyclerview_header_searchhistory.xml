@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/edge_margin">
+    <TextView
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/search_history"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/material_black"
+        android:textSize="@dimen/dp_14"/>
+    <ImageView
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:scaleType="fitXY"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_clean"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@mipmap/delete"/>
+    <TextView
+        android:id="@+id/tv_clean"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/dp_14"
+        android:text="@string/cleaner"
+        android:textColor="@color/text_686868"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/exchange_re"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+    <ImageView
+        android:id="@+id/exchange_shopping_ims"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/exchange_shopping_describe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exchange_shopping_ims"
+        android:layout_alignStart="@+id/exchange_shopping_ims"
+        android:layout_alignLeft="@+id/exchange_shopping_ims"
+        android:layout_alignEnd="@+id/exchange_shopping_ims"
+        android:layout_alignRight="@+id/exchange_shopping_ims"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/material_black"
+        android:textSize="@dimen/dp_14" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exchange_shopping_describe"
+        android:layout_alignStart="@+id/exchange_shopping_ims"
+        android:layout_alignLeft="@+id/exchange_shopping_ims"
+        android:layout_alignEnd="@+id/exchange_shopping_ims"
+        android:layout_alignRight="@+id/exchange_shopping_ims"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <TextView
+            android:id="@+id/exchange_shopping_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:textColor="@color/cp_color_gray_deep"
+            android:text="dsdsd"
+            android:textSize="@dimen/dp_14" />
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="2dp"
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_14"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/exchange_shopping_price"
+            android:src="@mipmap/precious_stone" />
+    </RelativeLayout>
+
+</RelativeLayout>

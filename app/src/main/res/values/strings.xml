@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">卡速宝</string>
+
+    <string name="carsuper_exit">再按一次退出程序</string>
+    <!--首页-->
+    <string name="main">首页</string>
+    <string name="classification">分类</string>
+    <string name="select_city">选择城市</string>
+    <string name="search">搜索</string>
+
+    <!--城市选择-->
+    <string name="cp_search_hint_text">城市中文名或拼音</string>
+    <string name="cp_no_result">没有找到，换个词试试~</string>
+    <string name="cp_locate_failed">定位失败</string>
+    <string name="cp_locating">正在定位…</string>
+
+    <!--搜索-->
+    <string name="store_search">门店</string>
+    <string name="total">全部</string>
+    <string name="search_history">历史搜索</string>
+    <string name="cleaner">清空</string>
+
+    <!--商城-->
+
+    <string name="brand">品牌</string>
+    <string name="sort">排序</string>
+    <string name="shoppingmall">商城</string>
+    <string name="commodity_detail">商品详情</string>
+    <string name="commodity">商品</string>
+    <string name="comments">评论</string>
+    <string name="detail">详情</string>
+    <string name="suggestion">推荐</string>
+    <string name="evaluation_for_commodity">商品评价</string>
+
+    <string name="immediately_pay">立即购买</string>
+    <string name="product_detail">产品详情</string>
+
+    <string name="suggestion_collocation">推荐搭配</string>
+    <string name="count_to_buy">购买数量</string>
+
+    <string name="ensure">确定</string>
+    <string name="evaluation_detial">评价详情</string>
+
+    <string name="commodity_been_buy">购买的商品</string>
+    <string name="confirm_order">订单确认</string>
+
+    <string name="coupon">优惠券</string>
+    <string name="no_address">请添加地址</string>
+
+
+    <!--门店-->
+
+    <string name="store_detail">门店详情</string>
+    <string name="evaluation_for_store">门店评价</string>
+    <string name="range_for_repair">维修范围</string>
+    <string name="explain">说明</string>
+    <string name="service_name">说明</string>
+    <string name="price">价格</string>
+    <string name="contact_store">联系门店</string>
+    <string name="goto_store">前往门店</string>
+    <string name="openreplay">查看更多评论</string>
+
+
+    <string-array name="shoppingmall_sortIdArray">
+        <item>default</item>
+        <item>score</item>
+        <item>price</item>
+        <item>sold</item>
+    </string-array>
+
+    <string-array name="shoppingmall_ssortStringArray">
+        <item>综合排序</item>
+        <item>好评有效</item>
+        <item>价格最低</item>
+        <item>销量最高</item>
+    </string-array>
+
+
+    <string-array name="store_sortIdArray">
+        <item>default</item>
+        <item>quality</item>
+        <item>distance </item>
+    </string-array>
+
+
+    <string-array name="store_ssortStringArray">
+        <item>默认排序</item>
+        <item>好评优先</item>
+        <item>距离最近</item>
+
+    </string-array>
+    <!--个人信息-->
+    <string name="nick_name">昵称</string>
+    <string name="name_warning">此昵称并非真实姓名，仅用于评论等场景里使用</string>
+    <string name="save">保存</string>
+    <string name="thanks_for_evaluate">据说坚持评价的人运气都会好一点哦</string>
+    <string name="see_mycomment">查看我的评论</string>
+    <string name="setting">设置</string>
+    <string name="personal_setting">个人设置</string>
+    <string name="push_toggle">推送开关</string>
+    <string name="score_forus">给我评分</string>
+    <string name="clear_cache">清除本地缓存</string>
+    <string name="join_us">招商加盟</string>
+    <string name="about_ksuper">关于卡速宝</string>
+    <string name="select_coupon">可使用优惠券</string>
+    <string name="exist_user">退出当前用户</string>
+    <string name="already_signin">已签到</string>
+    <string name="my_commodity_order">我的商品订单</string>
+    <string name="all">全部</string>
+    <string name="need_to_pay">待付款</string>
+    <string name="need_to_send">待发货</string>
+    <string name="need_to_recieve">待收货</string>
+    <string name="need_to_evaluate">待评价</string>
+    <string name="return_change">退换货</string>
+    <string name="maintance_order">保养订单</string>
+    <string name="shopping_cart">购物车</string>
+    <string name="Coupon">优惠券</string>
+    <string name="recieveinig_address">收货地址</string>
+    <string name="my_lovely_car">我的爱车</string>
+    <string name="my_score">我的积分</string>
+    <string name="my_scoreion">宝石</string>
+    <string name="more_score">免费赚取更多积分</string>
+    <string name="opinions">意见反馈</string>
+    <string name="gift_for_invitation">邀请有礼</string>
+    <string name="delete">删除</string>
+    <string name="inviter_rights"> 每邀请一位新用户成功注册登录\n即可获得500积分和专属优惠券\n(仅限卡速宝App使用)</string>
+    <string name="invitee_rights">点击分享链接输入手机号即可领取专属优惠券\n(仅限卡速宝App使用)</string>
+    <string name="how_to_invitation">通过以下方式邀请</string>
+    <string name="wechat">微信</string>
+    <string name="qr_code">二维码</string>
+    <string name="circle_of_friends">朋友圈</string>
+    <string name="submit">提交</string>
+    <string name="receiver">收货人:</string>
+    <string name="order_recieve_address">收货地址:</string>
+    <string name="order_time">下单时间:</string>
+    <string name="order_number">订单编号:</string>
+    <string name="order_status">订单状态:</string>
+    <string name="copy_order_number">复制单号</string>
+    <string name="see_all">查看全部</string>
+    <string name="Total_price">合计:</string>
+    <string name="send_price">运费:</string>
+    <string name="how_much_to_pay">应付:</string>
+    <string name="goto_evaluate">去评价</string>
+
+    <string name="return_change_detail">退换详情</string>
+    <string name="return_change_message">您已成功发起退款申请，请耐心等待商家处理</string>
+    <string name="return_change_number">退款编号:</string>
+    <string name="return_change_reason">退款原因:</string>
+    <string name="return_change_money">退款金额:</string>
+    <string name="return_change_time">申请时间:</string>
+    <string name="cancel_submit">撤销申请</string>
+
+    <string name="coupon1">我的优惠券</string>
+    <string name="coupon_Standby">待使用</string>
+    <string name="coupon_Overdue">已过期</string>
+    <string name="coupon_tobeuse">去使用</string>
+    <string name="coupon_ClickAndCollect">点击领取</string>
+
+    <!--登录-->
+    <string name="login">验证并登录</string>
+    <string name="login_hinit_text">未注册的手机号验证后自动创建账号</string>
+    <string name="verification_input">获取验证码</string>
+
+    <!--设置-->
+    <string name="appset_toast_clear_cache_success">清除缓存成功！</string>
+    <string name="about_us">\t\t卡速宝旗下卡速宝与正品两大品牌共同运营，卡速宝专注于商用车后市场，实体店主要分布于高速、国道、省道、县道、物流园区；
+     \n\t\t正品专注于乘用车后市场，实体店主要分布于高速、城镇生活社区；
+     \n\t\t两大品牌通过建立大规模的实体店网络及诚信服务口碑，分别让商用车及乘用车保养成本（配件+油耗+时间）降到最低点，间接保养成本（假冒伪劣配件及不规范操作造成的车辆伤害）降为零；
+     \n\t\t目前，卡速宝已覆盖湖北、贵州、云南、广东、江西、山西、重庆六省一市，网点规模达200+门店，已成为中国最大的公路汽车售后服务实体连锁品牌。自有20余人IT团队开发有APP、小程 序、门店管理系统（收银系统和进销存管理系统）等多个互联网产品，形成全方位的资源组合。我们热烈欢迎道达尔、出光、东风康明斯、法士特、东风商用车、东风风光、前进轮胎等国际及国内知名品牌与卡速宝进行战略合作。
+     \n\t\t至2020年，卡速宝网点规划发展达1000家，届时我们将成为汽车用品最大的连锁超市，成为为众多汽车及零部件品牌服务的共享大平台。卡速宝人承载着荣耀与梦想，用长远的规划，一流的产品、可靠的质量，诚信的服务引领中国汽车后市场行业走进崭新的时代！</string>
+    <!--权限-->
+    <string name="title_dialog">Tips</string>
+    <string name="message_permission_rationale">授予以下权限以继续该程序:\n\n%1$s</string>
+    <string name="message_permission_always_failed">请在设置里给我们一下权限:\n\n%1$s</string>
+    <string name="message_setting_comeback">用户从设置页面返回。</string>
+
+    <string name="resume">确定</string>
+    <string name="cancel">取消</string>
+</resources>

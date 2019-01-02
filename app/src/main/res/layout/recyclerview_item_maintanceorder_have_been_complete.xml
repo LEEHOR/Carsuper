@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_maintance_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/edge_margin"
+    android:background="@drawable/bg_fff_background">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/text0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单编号：" />
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_alignTop="@+id/text0"
+        android:layout_toRightOf="@+id/text0" />
+    <View
+        android:id="@+id/top_view_line"
+        android:layout_below="@+id/text0"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/material_grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_alignLeft="@+id/text0"
+        android:layout_below="@+id/top_view_line"
+        android:text="预约地址：" />
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_order_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+
+        android:layout_alignLeft="@id/tv_number"
+        android:layout_alignTop="@+id/text1"
+        android:layout_toRightOf="@+id/text1" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text1"
+        android:layout_below="@+id/text1"
+        android:text="详细地址：" />
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_detail_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_number"
+        android:singleLine="true"
+        android:layout_alignTop="@+id/text2"
+        android:layout_toRightOf="@+id/text2" />
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text2"
+        android:layout_below="@+id/text2"
+        android:text="保养时间：" />
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+
+        android:id="@+id/tv_maintance_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_number"
+
+        android:layout_alignTop="@+id/text3"
+        android:layout_toRightOf="@+id/text3" />
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_ensure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_red_frame_background"
+        android:padding="@dimen/dp_4"
+        android:text="确认完成服务"
+        android:textColor="@color/prominent_text_color" />
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_toLeftOf="@+id/tv_ensure"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_red_frame_background"
+        android:padding="@dimen/dp_4"
+        android:text="联系员工"
+        android:textColor="@color/prominent_text_color" />
+
+
+
+    <TextView
+        android:textSize="@dimen/dp_14"
+        android:id="@+id/tv_order_status"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/text0"
+        android:textColor="@color/prominent_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</LinearLayout>

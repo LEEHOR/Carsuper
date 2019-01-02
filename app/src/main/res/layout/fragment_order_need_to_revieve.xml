@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="待收货" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_40">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="卖家已发货" />
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/sending" />
+                </RelativeLayout>
+
+                <include layout="@layout/layout_item_order_info" />
+
+                <include layout="@layout/layout_item_receiver_info"/>
+
+
+                <include layout="@layout/layout_item_logistics_info" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_commodity_list"
+                    android:background="@drawable/bg_fff_background"
+                    android:padding="@dimen/edge_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/edge_margin"
+                    android:background="@drawable/bg_fff_background">
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text0"
+                        android:text="合计："
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_totalprice"
+                        android:textColor="@color/material_red_500"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/text0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text1"
+                        android:text="运费："
+                        android:layout_toRightOf="@+id/tv_totalprice"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_money_for_send"
+                        android:textColor="@color/material_red_500"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text2"
+                        android:text="应付："
+                        android:layout_toLeftOf="@+id/tv_money_to_pay"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/tv_money_to_pay"
+                        android:textColor="@color/material_red_500"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_fff_background"
+            android:paddingRight="@dimen/edge_margin"
+            android:paddingLeft="@dimen/edge_margin"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_return_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_toLeftOf="@+id/tv_ensure_recieve"
+                android:background="@drawable/bg_red_frame_background"
+                android:padding="@dimen/dp_4"
+                android:text="退换货"
+                android:textColor="@color/prominent_text_color" />
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_ensure_recieve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_red_frame_background"
+                android:padding="@dimen/dp_4"
+                android:text="确认收货"
+                android:textColor="@color/prominent_text_color" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

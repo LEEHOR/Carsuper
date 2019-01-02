@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/confirm_order" />
+
+    <RelativeLayout
+        android:id="@+id/rl_reciever"
+        android:layout_marginTop="5dp"
+        android:padding="@dimen/edge_margin"
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:hint="点击箭头选择配送地址"
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_receiver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/edge_margin" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_receiver_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tv_receiver_name" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_receiver_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignLeft="@+id/tv_receiver_name"
+            android:layout_below="@+id/tv_receiver_name" />
+
+
+        <ImageView
+            android:id="@+id/iv_select_receiver_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_receiver_name"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_order_list"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:padding="@dimen/edge_margin"
+                    android:id="@+id/rl_coupon"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:layout_below="@+id/rv_order_list">
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:id="@+id/text0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/coupon" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawableRight="@mipmap/right" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fff_background"
+                    android:padding="@dimen/edge_margin">
+
+                    <TextView
+                        android:textSize="@dimen/dp_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="优惠" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/material_red_600" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv_totalprice"
+            android:text="@string/Total_price" />
+
+        <TextView
+            android:id="@+id/tv_totalprice"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@+id/tv_submit_order"
+            android:gravity="center"
+            android:textColor="@color/material_red_600" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_submit_order"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/material_red_600"
+            android:gravity="center"
+            android:text="提交订单"
+            android:textColor="@color/material_white" />
+    </RelativeLayout>
+</LinearLayout>

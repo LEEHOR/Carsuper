@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_navigator_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_baidu_navigator"
+            android:text="百度地图"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_bule200_frame_background"
+            android:layout_marginLeft="@dimen/edge_margin"
+            android:layout_marginRight="@dimen/edge_margin"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_gaode_navigator"
+            android:text="高德地图"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_bule200_frame_background"
+            android:layout_marginLeft="@dimen/edge_margin"
+            android:layout_marginRight="@dimen/edge_margin"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            android:text="取消"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_bule200_frame_background"
+            android:layout_marginLeft="@dimen/edge_margin"
+            android:layout_marginRight="@dimen/edge_margin"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

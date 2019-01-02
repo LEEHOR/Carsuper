@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/store_detail" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.carsuper.coahr.widgets.MyNestedScrollView
+        android:id="@+id/scv_store_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background_color"
+            android:orientation="vertical">
+
+            <com.donkingliang.banner.CustomBanner
+                android:id="@+id/customBanner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fff_background"
+                android:padding="@dimen/edge_margin">
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_store_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_store_business_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_store_info"
+                    android:layout_below="@+id/tv_store_info"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_5dp"
+                    android:textColor="@color/prominent_text_color" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_store_lable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_item_linear_margin_5dp"
+                    android:layout_alignLeft="@+id/tv_store_business_time"
+                    android:layout_below="@+id/tv_store_business_time" />
+
+                <ImageView
+                    android:id="@+id/iv_store_repair_union"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_transport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_item_linear_margin_5dp"
+                android:padding="@dimen/edge_margin"
+                android:background="@drawable/bg_fff_background">
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_user_receiving_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@mipmap/place"
+                    android:text="@string/no_address" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_store_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_store_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fff_background"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_red" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/evaluation_for_store" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_blue" />
+            </LinearLayout>
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_no_evaluation"
+                android:text="暂无评价"
+                android:gravity="center"
+                android:visibility="visible"
+                android:background="@drawable/bg_fff_background"
+                android:padding="@dimen/edge_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/rl_evaluation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fff_background"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/edge_margin"
+                android:paddingRight="@dimen/edge_margin"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_user_headerimg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:textSize="@dimen/dp_12"
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_user_headerimg"
+                    android:layout_toRightOf="@+id/iv_user_headerimg"
+                    />
+
+                <TextView
+                    android:textSize="@dimen/dp_10"
+                    android:textColor="@color/text_times"
+                    android:id="@+id/tv_evaluate_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_user_name"
+                    android:layout_below="@+id/tv_user_name" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBaseline="@+id/iv_user_headerimg"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textSize="@dimen/dp_12"
+                        android:id="@+id/tv_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="评分" />
+
+                    <com.carsuper.coahr.widgets.StarBar
+                        android:id="@+id/sb_evaluate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        app:starCount="5"
+                        app:starDistance="5dp"
+                        app:starEmpty="@mipmap/star_empty"
+                        app:starFill="@mipmap/star_fill"
+                        app:starSize="@dimen/dp_10" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/text_line"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:layout_below="@+id/tv_evaluate_time"
+                    android:background="@color/material_grey_200"
+                    android:layout_alignLeft="@+id/tv_user_name"/>
+                <TextView
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textSize="@dimen/dp_12"
+                    android:textColor="@color/cp_color_gray_deep"
+                    android:id="@+id/tv_evaluate_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_user_name"
+                    android:layout_below="@+id/text_line" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:padding="@dimen/dp_5"
+                    android:id="@+id/rv_evaluate_pushimg"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_user_name"
+                    android:layout_below="@+id/tv_evaluate_message"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_more_evaluate"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rv_evaluate_pushimg"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bg_red_frame_background"
+                    android:textColor="@color/material_red_300" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_store_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fff_background"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/layout_item_linear_margin_10dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_red" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/range_for_repair" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/line_blue" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:background="@drawable/bg_fff_background"
+                android:paddingLeft="20dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:text="@string/service_name"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="@dimen/dp_14"
+                    android:id="@+id/tv_price"
+                    android:text="@string/price"
+                    android:layout_centerVertical="true"
+                    android:layout_alignTop="@id/tv_service"
+                    android:layout_marginLeft="100dp"
+                    android:textColor="@color/material_red_600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_range_for_repair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </com.carsuper.coahr.widgets.MyNestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_contact_store"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_blue_700"
+                android:gravity="center"
+                android:textColor="@color/material_white"
+                android:text="@string/contact_store" />
+
+
+            <TextView
+                android:textSize="@dimen/dp_14"
+                android:id="@+id/tv_goto_store"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/goto_store"
+                android:textColor="@color/material_white"
+                android:background="@color/material_red_600"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

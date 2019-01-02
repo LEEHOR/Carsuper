@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.carsuper.coahr">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="ACTION_MANAGE_OVERLAY_PERMISSION"/>
+
+    <!-- 分享所需要的权限 -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Push service 运行需要的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:name=".mvp.view.base.BaseApplication"
+        android:icon="@mipmap/launch_logo"
+        android:roundIcon="@mipmap/launch_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".mvp.view.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".mvp.view.MainActivity" android:theme="@style/DefaultCityPickerTheme"/>
+        <activity android:name=".mvp.view.ContainerActiivty" android:theme="@style/DefaultCarPickerTheme"/>
+        <!--apk更新-->
+    <!--    <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.carsuper.coahr"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            &lt;!&ndash;元数据&ndash;&gt;
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>-->
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+
+        <meta-data
+            android:name="com.carsuper.coahr.utils.imageLoader.GlideConfiguration"
+            android:value="GlideModule" />
+
+        <meta-data
+            android:name="com.carsuper.coahr.utils.imageLoader.GlideCache"
+            android:value="GlideModule" />
+
+        <!--支付宝-->
+     <!--   <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>-->
+
+        <!--友盟-->
+        <!-- 使用完全自定义消息来开启应用的服务进程的示例服务配置 -->
+        <!-- 不是必需的服务，可以根据开发者的需求进行设置 -->
+        <service android:name=".umeng.UmengNotificationService" />
+        <service android:name=".umeng.MyNotificationService"/>
+        <receiver android:name=".umeng.NotificationBroadcast"/>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5b7cd7518f4a9d4e05000014" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="593cc124db10a9ca7841fe214380c3f8" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" />
+        <activity
+            android:name="com.carsuper.coahr.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
+        <!--微信支付-->
+        <activity
+            android:name="com.carsuper.coahr.wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+           />
+        <!--下载更新apk-->
+        <service android:name=".receive.DownLoadService"/>
+        <receiver android:name=".receive.DownloadReceive">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <!--<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />-->
+            </intent-filter>
+        </receiver>
+        <!-- AK鉴权 -->
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3sGld4ZaGeXPOFEgOsTAmauYMhSaGGUh" />  <!-- http://lbsyun.baidu.com/apiconsole/key -->
+
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
+        <!--&lt;!&ndash;阿里云热更新&ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="com.taobao.android.hotfix.IDSECRET"-->
+            <!--android:value="25263471-1" />-->
+        <!--<meta-data-->
+            <!--android:name="com.taobao.android.hotfix.APPSECRET"-->
+            <!--android:value="cf9f85bcca87c81018166bdbc4e50760 " />-->
+        <!--<meta-data-->
+            <!--android:name="com.taobao.android.hotfix.RSASECRET"-->
+            <!--android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCEaP5AszlMSCAbTkAYYyl33caMb6+RS/WyIWIzFmbnphVcajrKU8GqAwmZ3ZT8GosT/PWaHwqeGrjDgiHZUkQp8sCtLbRcf+yJ2MV6lL4gAcKmbgAzCUDSgO2ZFAjzwL79Jl7vALzrwsSHkIJhW5lcTMEs1Gn15F3bN/w7N4/u9EsRr1Ud+YD0blgkNBlpMSeoiQzNgXSxfpfXf2Oh9JkhB+QmXgZz1tZz+44ZDeiThPVH8VBMCzWTLwoMEeg4O6NObhRs6pBYGWB47YE7BxkS+suPRH3zv4haeM7EftU5DqIkzOfdGVSjKTTMmHy7nmt4Q3h0wN+ZL6LiDQJZxSHVAgMBAAECggEAegobbZ7CzOAdV42D3fZnnic2fPHjq9OLHSdPzy5yokedoJP4o8sW0JAEJWDplIMSdNXNuMOrkZWnfetPL3J3iQJJPFTHzAnMBjFZsmWt5uo4chUo8eExcdOLKnAg4Cli3wiirz7K4bGeWiSDRyCZ9Ux5L8yH7S8Sop6zSBEqBF6bD23K9RVMgTb0xCSNJUXPx850H963JnefATFXeW9FuLIbp4Z17d4dkyYy4gdl55QG2Ovi07xqJnp72F9njFT3PM/46fkN9KjeCo6h4Dq4gcHbnofRz3u/421HTSdi/UGPpdXyMZatXvlvm28WWYH0+xwTJ1wb6dKqXhpDgnREgQKBgQD3bnq0oqoHjqVx2BU+G1tWipfVfaFfrCBU9uoC86KGtnMCX+IzEjhSwmbTBwZUNBU+x7XnP1UMMpPKHdtLqnVT7p1QKPRPgO98IYIfEbq20vZAumMJEN1bv0c/aNNebc9wmnDXLZqZyE/50zcCajklEBnurINQTT81mURzpuljWQKBgQCI/tSQVKhZe3gld1xfNDDDPjGEa081xKpn3T4NalRQMQL0AmKLGCnq2Cp2t4cDD2U1gVKI3wLDFy6xYbJzNS245WvxVX/bcLDOPOLLj1mah8jhbGNCtbLLa8FoUrUcAq3jv3cSBtkBqJbiXBEh23BM8i9pQLD1aRHSkoYyy8eO3QKBgQDA/k17g703s83cJH09Oj1eHTAc96bdZva5DvasYriMdtbyLTPUPgvskXF+fGY1W4KOu1tpCf8eSnz4E52vQT/Ovbm6gpc9RAaIPeKutTd7zsUA6+C/e4YNP/8kuHDVoLVC0VPeotWJybKH3HV1zsDP5eU0Qx8RjY8WEXxQ8Qnt0QKBgFZJpBtwp0UNZuS6ZL02g0xG3SuZ559nSyn2iYIrqgWEiWamJemUg7p/A2gZOvnrdYUY+qJpTTUSYf+qGJtGMJFYOAAfKVRPi52rbfJnTTnvMtEB0xeOmJpWOdD630ZQTbS4wUfidkb8KGVVNhlMPVTJ6qDx9UPuNSKb1dkiz4QlAoGASOJyEyhvqu1ktXlTTUJQsyipUbechzBlYnVJhOPF6XuCPmQr/vgy3vHQxF5vYlUCrnnu4ZKB5kKzeirijVMmiPc0gGopfSMrnWs3tZ2WBtOCmhRifvlIcsQh/wd4CmGT/nGYzdLH4dZ3TeJmking2mYJzTHpAT/eApGVlTXoR3k=" />-->
+
+    </application>
+</manifest>

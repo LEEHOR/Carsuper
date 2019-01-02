@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_logistics"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fff_background"
+    >
+
+
+    <com.carsuper.coahr.widgets.logisticsRecyclerView.LogisticsRecyclerView
+        android:padding="@dimen/edge_margin"
+        android:id="@+id/rv_logistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/bg_fff_background">
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:visibility="gone"
+            android:id="@+id/tv_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableRight="@mipmap/down"
+            android:text="@string/see_all"
+            android:textColor="@color/prominent_text_color" />
+    </RelativeLayout>
+</FrameLayout>

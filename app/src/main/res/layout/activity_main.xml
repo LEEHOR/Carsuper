@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.view.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_container_main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="47dp"/>
+
+    <com.carsuper.coahr.widgets.bottomNavigation.MyBottomNavigation
+        android:id="@+id/bottom_navigation_main_fragment"
+        android:background="@color/material_white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_gravity="bottom" />
+
+</FrameLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="绑定手机号" />
+
+
+    <LinearLayout
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/cp_color_gray_dark"
+            android:text="手机号" />
+
+        <com.carsuper.coahr.widgets.MobilePhoneEditText
+            android:id="@+id/et_mobilephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/image0"
+            android:background="@null"
+            android:inputType="number"
+            android:maxLength="13"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textColorHint="#e6e6e6"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="14dp" />
+
+        <com.carsuper.coahr.widgets.BlockTextView
+            android:id="@+id/btv_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_red_frame_background"
+            android:gravity="center"
+            android:text="@string/verification_input"
+            android:textColor="@color/red_ea3340"
+            android:textSize="@dimen/dp_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_fff_background"
+        android:padding="@dimen/edge_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/cp_color_gray_dark"
+            android:text="验证码" />
+
+        <EditText
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/et_verifytoken"
+            style="@style/normal_edittext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:textCursorDrawable="@drawable/cursor"
+       />
+
+    </LinearLayout>
+
+   <!-- <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/edge_margin"
+        android:text="@string/bind_have_problem" />
+-->
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_60"
+        android:background="@color/material_red_600"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/save"
+        android:textColor="@color/material_white"
+        android:textSize="@dimen/dp_14" />
+</LinearLayout>

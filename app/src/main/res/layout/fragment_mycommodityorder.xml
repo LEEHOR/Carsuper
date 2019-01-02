@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    android:orientation="vertical">
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/my_commodity_order" />
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tbl_commodity_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_fff_background"
+        app:tabIndicatorColor="@color/material_grey_700"
+        app:tabTextAppearance="@style/TextAppearance.Design.Tab.Custom"
+        app:tabMode="scrollable"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_order_list_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_no_order"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:visibility="gone" />-->
+    </FrameLayout>
+
+</LinearLayout>

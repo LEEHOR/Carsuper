@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_store_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/edge_margin"
+    android:background="@drawable/bg_fff_background">
+
+    <ImageView
+        android:id="@+id/iv_store_img"
+        android:layout_width="@dimen/commodity_info_img_dimen"
+        android:layout_height="@dimen/commodity_info_img_dimen"
+        android:scaleType="fitXY" />
+
+
+    <TextView
+
+        android:id="@+id/tv_store_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@id/iv_store_img"
+        android:layout_toRightOf="@+id/iv_store_img"
+        android:textSize="@dimen/dp_14"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/important_text_color"/>
+
+    <com.carsuper.coahr.widgets.StarBar
+        android:id="@+id/sb_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignLeft="@+id/tv_store_name"
+        android:layout_toRightOf="@+id/iv_store_img"
+        android:layout_centerInParent="true"
+        app:starCount="5"
+        app:starDistance="5dp"
+        app:starEmpty="@mipmap/star_empty"
+        app:starFill="@mipmap/star_fill"
+        app:starSize="@dimen/dp_10" />
+
+    <TextView
+        android:id="@+id/tv_store_locatioon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxEms="13"
+        android:textSize="12dp"
+        android:layout_alignBottom="@+id/iv_store_img"
+        android:layout_alignLeft="@+id/tv_store_name"
+        android:layout_marginTop="12.5dp"
+        android:textColor="@color/secondary_text_color" />
+
+    <TextView
+        android:id="@+id/tv_store_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/tv_store_locatioon"
+        android:layout_toRightOf="@+id/tv_store_locatioon"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/secondary_text_color" />
+
+    <ImageView
+        android:id="@+id/iv_store_repair_union"
+        android:layout_alignTop="@+id/iv_store_img"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

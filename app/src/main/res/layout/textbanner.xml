@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.superluo.textbannerlibrary.TextBannerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_5"
+    app:setTextSize="@dimen/dp_14"
+    app:setGravity="center"
+    app:setDirection="bottom_to_top"
+    app:setSingleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_20">
+    </com.superluo.textbannerlibrary.TextBannerView>
+
+

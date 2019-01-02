@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/coupon_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tittle="@string/coupon1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_textBlack_dividers" />
+
+    <RadioGroup
+        android:id="@+id/coupon_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/coupon_Standby"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/tabselect_btn"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/coupon_Standby" />
+
+        <RadioButton
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/coupon_Overdue"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/tabselect_btn"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/coupon_Overdue" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/coupon_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+<Button
+    android:id="@+id/go_receive_coupon"
+    android:background="@color/prominent_text_color"
+    android:textColor="@color/material_white"
+    android:textSize="@dimen/dp_14"
+    android:text="领取优惠券"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40" />
+</LinearLayout>

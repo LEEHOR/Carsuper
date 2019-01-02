@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar
+        android:id="@+id/tb_tittle"
+        app:tittle="评价"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_fff_background"
+        android:paddingLeft="@dimen/edge_margin"
+        android:paddingRight="@dimen/edge_margin"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text0"
+            android:text="评分："
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <com.carsuper.coahr.widgets.StarBar
+            android:id="@+id/sb_evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/edge_margin"
+            app:isIntegerMark="true"
+            app:isCanChangeMark="true"
+            app:starCount="5"
+            app:starDistance="20dp"
+            app:starEmpty="@mipmap/star_empty"
+            app:starFill="@mipmap/star_fill"
+            app:starSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/tv_feel"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.carsuper.coahr.widgets.AnFQNumEditText
+        android:id="@+id/et_opinion"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/ck_is_anonymous"
+        android:text="匿名评价"
+        android:drawableLeft="@drawable/checkbox_beautiful_selector"
+        android:button="@null"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="@dimen/dp_10"
+        android:paddingLeft="@dimen/edge_margin"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/edge_margin"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_go_photo"
+            android:layout_width="@dimen/evaluate_img_height"
+            android:layout_height="@dimen/evaluate_img_height"
+            android:src="@mipmap/photo" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_opinion_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edge_margin"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/material_grey_500"
+        android:text="发布"
+        android:enabled="false"
+        android:textColor="@color/material_white" />
+
+</LinearLayout>

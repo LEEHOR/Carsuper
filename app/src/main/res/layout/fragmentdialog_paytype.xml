@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_paytype_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/edge_margin"
+        android:background="@drawable/bg_fff_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择支付方式" />
+
+
+        <RadioGroup
+            android:id="@+id/rdg_pay"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_zfb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@mipmap/zfbzf"
+                android:drawableRight="@drawable/checkbox_beautiful_selector"
+                android:text="支付宝" />
+
+
+            <RadioButton
+                android:id="@+id/rb_wx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@mipmap/wxzf"
+                android:drawableRight="@drawable/checkbox_beautiful_selector"
+                android:text="微信" />
+        </RadioGroup>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/my_love_rel"
+    android:background="@drawable/bg_fff_background"
+    android:padding="@dimen/edge_margin">
+
+
+    <ImageView
+        android:id="@+id/iv_car_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/tv_car_motor"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/iv_car_img"
+        android:background="@drawable/bg_bule_frame_text_background"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/material_blue_800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_car_horsepower"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@id/tv_car_motor"
+        android:background="@drawable/bg_bule_frame_text_background"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/material_blue_800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_car_brand"
+        android:layout_alignBottom="@+id/iv_car_img"
+        android:layout_alignLeft="@+id/tv_car_motor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv_primary_car"
+        android:button="@null"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/iv_car_img"
+        android:text="设为默认车型"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:drawableLeft="@mipmap/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:text="@string/delete"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBaseline="@+id/tv_primary_car"
+        android:background="@drawable/bg_red_frame_background"
+        android:textColor="@color/prominent_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

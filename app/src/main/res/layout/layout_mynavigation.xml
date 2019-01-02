@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <com.carsuper.coahr.widgets.SelectorImageView
+            android:id="@+id/iv_one"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="3dp"
+            android:scaleType="center"
+            app:selector_src="@mipmap/home_on"
+            android:src="@mipmap/home" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_one"
+            android:layout_below="@+id/iv_one"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/main"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <com.carsuper.coahr.widgets.SelectorImageView
+            android:id="@+id/iv_two"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="3dp"
+            android:scaleType="center"
+            app:selector_src="@mipmap/mall_on"
+            android:src="@mipmap/mall" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_two"
+            android:layout_below="@+id/iv_two"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/shoppingmall"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <com.carsuper.coahr.widgets.SelectorImageView
+            android:id="@+id/iv_three"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="3dp"
+            android:scaleType="center"
+            app:selector_src="@mipmap/booking_service_on"
+            android:src="@mipmap/booking_service" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_three"
+            android:layout_below="@+id/iv_three"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="预约"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <com.carsuper.coahr.widgets.SelectorImageView
+            android:id="@+id/iv_four"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="3dp"
+            android:scaleType="center"
+            app:selector_src="@mipmap/outlet_on"
+            android:src="@mipmap/outlet" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_four"
+            android:layout_below="@+id/iv_four"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="门店"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <com.carsuper.coahr.widgets.SelectorImageView
+            android:id="@+id/iv_five"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="3dp"
+            android:scaleType="center"
+            app:selector_src="@mipmap/mine_on"
+            android:src="@mipmap/mine" />
+
+        <TextView
+            android:textSize="@dimen/dp_14"
+            android:id="@+id/tv_five"
+            android:layout_below="@+id/iv_five"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="我的"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</merge>
