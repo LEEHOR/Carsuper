@@ -28,6 +28,7 @@ import com.carsuper.coahr.mvp.view.base.BaseApplication;
 import com.carsuper.coahr.mvp.view.base.BaseFragment;
 import com.carsuper.coahr.mvp.view.base.BaseLazyFragment;
 import com.carsuper.coahr.utils.PreferenceUtils;
+import com.carsuper.coahr.utils.ScreenUtils;
 import com.carsuper.coahr.utils.SetCustomBannerUtils;
 import com.carsuper.coahr.utils.UriUtils;
 import com.carsuper.coahr.utils.imageLoader.Imageloader;
@@ -174,6 +175,7 @@ private  SuperBadgeHelper need_to_play,need_to_send,need_to_recieve,need_to_eval
 
     @Override
     public void initView() {
+        Imageloader.setViewSize(ivAdvertisement,ScreenUtils.getScreenWidth(BaseApplication.mContext),ScreenUtils.getScreenWidth(BaseApplication.mContext)/2,null);
         ivAdvertisement.setOnClickListener(this);
         ivMessage.setOnClickListener(this);
         ivSetting.setOnClickListener(this);
@@ -321,7 +323,7 @@ private  SuperBadgeHelper need_to_play,need_to_send,need_to_recieve,need_to_eval
             for (int i = 0; i <jdata.size() ; i++) {
                 adList.add(jdata.get(i).getAdv_img());
             }
-            SetCustomBannerUtils.setCustomBanner(ivAdvertisement,adList,ImageView.ScaleType.FIT_CENTER);
+            SetCustomBannerUtils.setCustomBanner(ivAdvertisement,adList,ImageView.ScaleType.FIT_XY);
             setBannerLister(jdata,ivAdvertisement);
         }
     }

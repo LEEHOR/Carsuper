@@ -167,6 +167,7 @@ dependencies {
 
     // 可选，适用于Android的中国地区词典
     implementation 'com.github.promeg:tinypinyin-lexicons-java-cncity:2.0.3'
+
     implementation files('libs/BaiduLBS_Android.jar')
 
     //日期选择
@@ -211,7 +212,7 @@ dependencies {
     implementation  'com.umeng.sdk:common:1.5.1'
 
     //PushSDK必须依赖utdid库，所以需要加入对应依赖(alipay-sdk中包含alicloud-android-utdid避免重复)
-    //implementation  'com.umeng.umsdk:utdid:1.1.5.3'
+   // implementation  'com.umeng.umsdk:utdid:1.1.5.3'
     //PushSDK (阿里热更新包含了避免重复)
     implementation 'com.umeng.sdk:push:4.0.0'
     //最新版com.umeng.sdk:common和分享share-core不兼容导致报错故使用旧版本
