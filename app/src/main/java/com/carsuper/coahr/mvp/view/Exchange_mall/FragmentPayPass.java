@@ -18,10 +18,12 @@ import com.carsuper.coahr.mvp.contract.base.BaseContract;
 import com.carsuper.coahr.mvp.contract.main.FragmentPayPass_C;
 import com.carsuper.coahr.mvp.model.bean.ExchangeRe;
 import com.carsuper.coahr.mvp.presenter.main.FragmentPayPass_Presenter;
+import com.carsuper.coahr.mvp.view.adapter.KeyboardChangeListener;
 import com.carsuper.coahr.mvp.view.base.BaseApplication;
 import com.carsuper.coahr.mvp.view.base.BaseDialogFragment;
 import com.carsuper.coahr.utils.KeyBoardUtils;
 import com.carsuper.coahr.utils.ScreenUtils;
+import com.carsuper.coahr.utils.SoftKeyboardStateHelper;
 import com.carsuper.coahr.widgets.PayPsdInputView;
 import com.socks.library.KLog;
 
@@ -50,6 +52,8 @@ public class FragmentPayPass extends BaseDialogFragment<FragmentPayPass_C.Presen
     private ReceiveListener listener;
     private String c_id;
     private String o_status;
+    private KeyboardChangeListener keyboardChangeListener;
+    private SoftKeyboardStateHelper softKeyboardStateHelper;
 
     public static FragmentPayPass newInstance(String c_ic,String o_status) {
         FragmentPayPass payPass=new FragmentPayPass();
@@ -78,18 +82,34 @@ public class FragmentPayPass extends BaseDialogFragment<FragmentPayPass_C.Presen
                 dismiss();
             }
         });
-
-  /*      ScreenUtils.observeInputlayout(root_view, getActivity(), new ScreenUtils.OnInputActionListener() {
+     /*   keyboardChangeListener= new KeyboardChangeListener(this.getDialog().getWindow());
+        keyboardChangeListener.setKeyBoardListener(new KeyboardChangeListener.KeyBoardListener() {
             @Override
-            public void onOpen() {
-                KLog.d("键盘打开");
-            }
-
-            @Override
-            public void onClose() {
-                dismiss();
+            public void onKeyboardChange(boolean isShow, int keyboardHeight) {
+                if (isShow){
+                    KLog.d("是否显示1",isShow);
+                } else {
+                    KLog.d("是否显示2",isShow);
+                 //   KeyBoardUtils.hideKeybord(inputPass,getActivity());
+                    dismiss();
+                }
+                KLog.d("是否显示3",isShow);
             }
         });*/
+
+        softKeyboardStateHelper = new SoftKeyboardStateHelper(root_view);
+        softKeyboardStateHelper.addSoftKeyboardStateListener(new SoftKeyboardStateHelper.SoftKeyboardStateListener() {
+            @Override
+            public void onSoftKeyboardOpened(int keyboardHeightInPx) {
+
+            }
+
+            @Override
+            public void onSoftKeyboardClosed() {
+                    dismiss();
+            }
+        });
+
         inputPass.setComparePassword(new PayPsdInputView.onPasswordListener() {
             @Override
             public void onDifference(String oldPsd, String newPsd) {
@@ -139,11 +159,9 @@ public class FragmentPayPass extends BaseDialogFragment<FragmentPayPass_C.Presen
     public void iniWidow(Window window) {
         if (window != null) {
             WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-            lp.alpha = 0.9f;  //透明度
             window.getDecorView().setPadding(0, 0, 0, 0);
-            window.setBackgroundDrawableResource(R.drawable.bg_fff_background);
-            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-            window.setAttributes(lp);
+            window.setBackgroundDrawableResource(android.R.color.transparent);
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
             window.setWindowAnimations(R.style.bottom_in_out_animation);
         }
     }
@@ -194,6 +212,5 @@ public class FragmentPayPass extends BaseDialogFragment<FragmentPayPass_C.Presen
         if (inputPass != null) {
             KeyBoardUtils.showKeybord(inputPass, getActivity());
         }
-
     }
 }

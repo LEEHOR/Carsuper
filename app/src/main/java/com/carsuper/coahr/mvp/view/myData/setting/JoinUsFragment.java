@@ -1,6 +1,7 @@
 package com.carsuper.coahr.mvp.view.myData.setting;
 
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,8 +13,12 @@ import com.carsuper.coahr.mvp.presenter.myData.setting.JoinUsPresenter;
 import com.carsuper.coahr.mvp.view.base.BaseFragment;
 import com.carsuper.coahr.utils.NavigationBarUtils;
 import com.carsuper.coahr.widgets.myTittleBar.NormalTittleBar;
+import com.carsuper.coahr.widgets.x5web.SimpleWebView;
 import com.carsuper.coahr.widgets.x5web.X5WebViewByMyShelf;
 import com.tencent.smtt.export.external.extension.interfaces.IX5WebViewExtension;
+import com.tencent.smtt.export.external.interfaces.JsResult;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
 
 import javax.inject.Inject;
 
@@ -32,7 +37,7 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
     @BindView(R.id.tb_tittle)
     NormalTittleBar tbTittle;
     @BindView(R.id.webView)
-    X5WebViewByMyShelf webView;
+    SimpleWebView webView;
 
     private  String url;
     private int type;
@@ -63,9 +68,7 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
         tbTittle.getLeftIcon().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    if (webView !=null){
-                        webView.destroy();
-                    }
+
                 _mActivity.onBackPressed();
             }
         });
@@ -76,11 +79,11 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (NavigationBarUtils.hasNavigationBarFun(_mActivity)){
+      /*  if (NavigationBarUtils.hasNavigationBarFun(_mActivity)){
             if (NavigationBarUtils.isNavigationBarShow(_mActivity)){
                 NavigationBarUtils.hideBottomUIMenu(_mActivity);
             }
-        }
+        }*/
     }
 
     @Override
@@ -102,7 +105,10 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
         if (type == 3){
             tbTittle.getTvTittle().setText(title);
         }
-        initX5WebView(url);
+        if (type==4){
+            tbTittle.getTvTittle().setText(title);
+        }
+        initDetailsH5(url);
     }
 
     /**
@@ -120,11 +126,43 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
     }
 
     private void initX5WebView(String url) {
+
         webView.getSettings().setDisplayZoomControls(false);
-        IX5WebViewExtension ix5 = webView.getX5WebViewExtension();
-        if (null != ix5) {
-            ix5.setScrollBarFadingEnabled(false);
-        }
+            webView.setScrollbarFadingEnabled(false);
+        webView.loadUrl(url);
+    }
+    /**
+     * 初始化webView
+     */
+    @SuppressLint("SetJavaScriptEnabled")
+    private void initDetailsH5(String url) {
+
+        webView.getSettings().setDisplayZoomControls(false);
+        webView.setWebViewClient(new SimpleWebView.SimpleWebViewClient(){
+            @Override
+            public void onPageFinished(com.tencent.smtt.sdk.WebView webView, String url) {
+                super.onPageFinished(webView, url);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(com.tencent.smtt.sdk.WebView webView, String url) {
+                webView.loadUrl(url);
+               return true;
+            }
+
+        });
+
+      /*  webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public boolean onJsAlert(WebView webView, String s, String s1, JsResult jsResult) {
+                return super.onJsAlert(webView, s, s1, jsResult);
+            }
+
+            @Override
+            public boolean onJsConfirm(WebView webView, String s, String s1, JsResult jsResult) {
+                return super.onJsConfirm(webView, s, s1, jsResult);
+            }
+        });*/
         webView.loadUrl(url);
     }
 
@@ -141,7 +179,7 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
         super.onDestroy();
         //释放资源
         if (webView != null)
-            webView.destroy();
+            webView.clearCache(true);
     }
 
     @Override
@@ -149,5 +187,18 @@ public class JoinUsFragment extends BaseFragment<JoinUsContract.Presenter> imple
         super.onResume();
         if (webView !=null)
            webView.onResume();
+    }
+
+    @Override
+    public boolean onBackPressedSupport() {
+        if (webView.canGoBack()){
+            webView.goBack();
+            return true;
+        } else {
+            if (webView != null) {
+                webView.clearCache(true);
+            }
+            return super.onBackPressedSupport();
+        }
     }
 }

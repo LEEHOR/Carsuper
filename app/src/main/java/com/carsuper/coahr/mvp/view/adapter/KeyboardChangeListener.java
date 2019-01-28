@@ -8,6 +8,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 
 import com.carsuper.coahr.R;
+import com.socks.library.KLog;
 
 /**
  * simple and powerful Keyboard show/hidden listener,view {@android.R.id.content} and {@ViewTreeObserver.OnGlobalLayoutListener}
@@ -83,7 +84,7 @@ public class KeyboardChangeListener implements ViewTreeObserver.OnGlobalLayoutLi
                 keyboardHeight = mOriginHeight - currHeight;
                 isShow = true;
             }
-
+            KLog.d("显示",isShow);
             if (mKeyBoardListen != null) {
                 mKeyBoardListen.onKeyboardChange(isShow, keyboardHeight);
             }

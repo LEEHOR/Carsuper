@@ -123,8 +123,8 @@
     <string name="opinions">意见反馈</string>
     <string name="gift_for_invitation">邀请有礼</string>
     <string name="delete">删除</string>
-    <string name="inviter_rights"> 每邀请一位新用户成功注册登录\n即可获得500积分和专属优惠券\n(仅限卡速宝App使用)</string>
-    <string name="invitee_rights">点击分享链接输入手机号即可领取专属优惠券\n(仅限卡速宝App使用)</string>
+    <string name="inviter_rights"> 每邀请一位新用户成功注册登录\n即可获得100积分和专属优惠券\n(仅限卡速宝App使用)</string>
+    <string name="invitee_rights">点击分享链接输入手机号并下载app后登录,\n即可获取150宝石及专属优惠券\n(仅限卡速宝App使用)</string>
     <string name="how_to_invitation">通过以下方式邀请</string>
     <string name="wechat">微信</string>
     <string name="qr_code">二维码</string>

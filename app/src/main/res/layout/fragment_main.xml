@@ -87,7 +87,29 @@
                     android:padding="@dimen/edge_margin"
                     android:background="@drawable/bg_fff_background"
                     android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/ll_fitting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
+                        <ImageView
+                            android:id="@+id/iv_car_wash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/sy_byj" />
+
+                        <TextView
+                            android:id="@+id/tv_car_wash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:textSize="@dimen/dp_12"
+                            android:text="买配件" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/ll_coupon"
@@ -116,6 +138,7 @@
 
 
                     <LinearLayout
+                        android:visibility="gone"
                         android:id="@+id/ll_engine_oil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -141,6 +164,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:visibility="gone"
                         android:id="@+id/ll_tyre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -164,35 +188,13 @@
                             android:text="轮胎" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/ll_fitting"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/iv_car_wash"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/sy_byj" />
 
-                        <TextView
-                            android:id="@+id/tv_car_wash"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/dp_12"
-                            android:text="配件" />
-                    </LinearLayout>
                     <LinearLayout
                         android:id="@+id/ll_shopping_car"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-
                         android:orientation="vertical">
 
                         <ImageView
@@ -201,7 +203,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:src="@mipmap/sy_gwc" />
-
                         <TextView
                             android:id="@+id/tv_shopping_cart"
                             android:layout_width="wrap_content"
@@ -209,9 +210,32 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
                             android:textSize="@dimen/dp_12"
-                            android:text="兑换中心" />
+                            android:text="换礼品" />
                     </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_carhome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
 
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_carhome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/driver" />
+
+                        <TextView
+                            android:id="@+id/tv_carhome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:textSize="@dimen/dp_12"
+                            android:text="司机之家" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -257,6 +281,7 @@
 
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
@@ -285,6 +310,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:visibility="gone"
                     android:scaleType="fitXY"
                     android:id="@+id/iv_activity"
                     android:background="@color/colorPrimary"

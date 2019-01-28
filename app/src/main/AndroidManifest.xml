@@ -66,7 +66,10 @@
         </activity>
 
         <activity android:name=".mvp.view.MainActivity" android:theme="@style/DefaultCityPickerTheme"/>
-        <activity android:name=".mvp.view.ContainerActiivty" android:theme="@style/DefaultCarPickerTheme"/>
+        <activity android:name=".mvp.view.ContainerActiivty" android:theme="@style/DefaultCarPickerTheme"
+            android:hardwareAccelerated="true">
+
+        </activity>
         <!--apk更新-->
     <!--    <provider
             android:name="android.support.v4.content.FileProvider"
@@ -145,8 +148,12 @@
                 <!--<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />-->
             </intent-filter>
         </receiver>
-        <!-- AK鉴权 -->
-        <!-- meta-data需要写在application中 -->
+
+        <!-- 腾讯X5内核初始化 -->
+        <service android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt" />
+        <!-- 百度AK鉴权 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="3sGld4ZaGeXPOFEgOsTAmauYMhSaGGUh" />  <!-- http://lbsyun.baidu.com/apiconsole/key -->

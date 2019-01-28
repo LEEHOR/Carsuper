@@ -101,6 +101,8 @@ public class MainFragment extends BaseLazyFragment<MainContract.Presenter> imple
     TextView tvEngineOil;
     @BindView(R.id.ll_engine_oil)
     LinearLayout llEngineOil;
+    @BindView(R.id.ll_carhome)
+    LinearLayout ll_carhome;
     @BindView(R.id.iv_tyre)
     ImageView ivTyre;
     @BindView(R.id.tv_tyre)
@@ -225,6 +227,7 @@ public class MainFragment extends BaseLazyFragment<MainContract.Presenter> imple
         llCoupon.setOnClickListener(this);
         llEngineOil.setOnClickListener(this);
         llFitting.setOnClickListener(this);
+        ll_carhome.setOnClickListener(this);
         llShoppingCar.setOnClickListener(this);
         llTyre.setOnClickListener(this);
         tvMoreOil.setOnClickListener(this);
@@ -403,6 +406,19 @@ public class MainFragment extends BaseLazyFragment<MainContract.Presenter> imple
                     startActivity(intent8);
                 }
                 break;
+            case R.id.ll_carhome:
+                    Intent intent9=new Intent(_mActivity, ContainerActiivty.class);
+                    intent9.putExtra("tofragment",Constants.MyMainFragment);
+                if (haslogin()){
+                    intent9.putExtra("url",Constants.TribuneUrl+"?token="+Constants.token);
+                } else {
+                    intent9.putExtra("url",Constants.TribuneUrl);
+                }
+                    intent9.putExtra("type",4);
+                    intent9.putExtra("title","小黑板");
+                    KLog.d("banner链接",Constants.TribuneUrl+Constants.token);
+                    startActivity(intent9);
+                break;
         }
     }
 
@@ -565,7 +581,10 @@ public class MainFragment extends BaseLazyFragment<MainContract.Presenter> imple
                 public void PermissionHave() {
                     getPresenter().startLocation();
                 }
-            }, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_WIFI_STATE);
+            }, Manifest.permission.ACCESS_COARSE_LOCATION
+                    , Manifest.permission.ACCESS_FINE_LOCATION
+                    , Manifest.permission.ACCESS_WIFI_STATE
+            ,Manifest.permission.READ_PHONE_STATE);
 
         } else {
             getPresenter().startLocation();

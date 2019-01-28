@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:tittle="@string/join_us" />
 
-    <com.carsuper.coahr.widgets.x5web.X5WebViewByMyShelf
+    <com.carsuper.coahr.widgets.x5web.SimpleWebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

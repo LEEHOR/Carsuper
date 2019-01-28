@@ -33,6 +33,7 @@ import com.carsuper.coahr.utils.SetCustomBannerUtils;
 import com.carsuper.coahr.utils.UriUtils;
 import com.carsuper.coahr.utils.imageLoader.Imageloader;
 import com.carsuper.coahr.widgets.CircleImageView;
+import com.carsuper.coahr.widgets.CircularImageView;
 import com.chendong.gank.library.SuperBadgeHelper;
 import com.donkingliang.banner.CustomBanner;
 import com.socks.library.KLog;
@@ -61,7 +62,7 @@ public class MyDataFragment extends BaseLazyFragment<MyDataContract.Presenter> i
     @Inject
     MyDataPresenter myDataPresenter;
     @BindView(R.id.iv_user_headerimg)
-    ImageView ivUserHeaderimg;
+    CircularImageView ivUserHeaderimg;
     @BindView(R.id.tv_user_name)
     TextView tvUserName;
     @BindView(R.id.iv_message)
@@ -70,7 +71,8 @@ public class MyDataFragment extends BaseLazyFragment<MyDataContract.Presenter> i
     ImageView ivSetting;
     @BindView(R.id.tv_signin)
     TextView tvSignin;
-
+    @BindView(R.id.tv_user_type)
+    TextView tv_user_type;
     @BindView(R.id.tv_needtopay)
     TextView tvNeedtopay;
     @BindView(R.id.tv_needtosend)
@@ -140,7 +142,7 @@ private  SuperBadgeHelper need_to_play,need_to_send,need_to_recieve,need_to_eval
                 tvLogin.setVisibility(View.VISIBLE);
                 tvIntegration.setText("");
                 tvUserName.setText(Constants.nickname);
-                Imageloader.loadCircularImage(UriUtils.getUriFromDrawableRes(BaseApplication.mContext,R.mipmap.primary),ivUserHeaderimg);
+                Imageloader.loadImage(UriUtils.getUriFromDrawableRes(BaseApplication.mContext,R.mipmap.primary),ivUserHeaderimg);
             }
         }
     }
@@ -155,7 +157,7 @@ private  SuperBadgeHelper need_to_play,need_to_send,need_to_recieve,need_to_eval
                 tvLogin.setVisibility(View.VISIBLE);
                 tvIntegration.setText("");
                 tvUserName.setText(Constants.nickname);
-                Imageloader.loadCircularImage(UriUtils.getUriFromDrawableRes(BaseApplication.mContext,R.mipmap.primary),ivUserHeaderimg);
+                Imageloader.loadImage(UriUtils.getUriFromDrawableRes(BaseApplication.mContext,R.mipmap.primary),ivUserHeaderimg);
 
             }
         }
@@ -234,15 +236,21 @@ private  SuperBadgeHelper need_to_play,need_to_send,need_to_recieve,need_to_eval
     public void onGetInfoSuccess(final PersonInfoBean personInfoBean) {
 
         tvUserName.setText(personInfoBean.getJdata().getUser().getNickname());
-        tvIntegration.setText(personInfoBean.getJdata().getUser().getPoints());
+        tvIntegration.setText(personInfoBean.getJdata().getUser().getPoints()+"宝石");
         if (personInfoBean.getJdata().getUser().getUserheadimg() !=null && !personInfoBean.getJdata().getUser().getUserheadimg().equals("")){
-            Imageloader.loadCircularImage(personInfoBean.getJdata().getUser().getUserheadimg(), ivUserHeaderimg);
+            Imageloader.loadImage(personInfoBean.getJdata().getUser().getUserheadimg(),ivUserHeaderimg);
         } else {
             Uri uriFromDrawableRes = UriUtils.getUriFromDrawableRes(BaseApplication.mContext, R.mipmap.primary);
-            Imageloader.loadCircularImage(uriFromDrawableRes, ivUserHeaderimg);
+            Imageloader.loadImage(uriFromDrawableRes, ivUserHeaderimg);
         }
         this.headPath = personInfoBean.getJdata().getUser().getUserheadimg();
         this.MyPoints = personInfoBean.getJdata().getUser().getPoints();
+        //1：零担用户   2：车队用户   3：三方物流  4：普通用户  -1: 暂未设置
+        tv_user_type.setText(personInfoBean.getJdata().getUser().getUser_type()==1?"零担用户"
+                :personInfoBean.getJdata().getUser().getUser_type()==2?"车队用户"
+                :personInfoBean.getJdata().getUser().getUser_type()==3?"物流用户"
+                :personInfoBean.getJdata().getUser().getUser_type()==4?"普通用户"
+                :personInfoBean.getJdata().getUser().getUser_type()==-1?"暂未设置":"暂未设置");
         tvLogin.setVisibility(View.GONE);
         isSign = personInfoBean.getJdata().getUser().getBonus_status();
         if (isSign==0) {

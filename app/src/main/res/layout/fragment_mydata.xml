@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/app_background_color"
     android:orientation="vertical">
 
@@ -23,11 +24,14 @@
                 android:layout_marginTop="25dp"
                 android:orientation="vertical">
 
-                <ImageView
+                <com.carsuper.coahr.widgets.CircularImageView
                     android:id="@+id/iv_user_headerimg"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
+                    app:border="false"
+                    app:border_color="@color/colorPrimary"
                     android:src="@mipmap/primary" />
 
                 <TextView
@@ -56,6 +60,17 @@
                     android:layout_toRightOf="@+id/tv_integration"
                     android:text="点击头像登录"
                     android:visibility="visible" />
+                <TextView
+                    android:layout_toRightOf="@+id/tv_login"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:id="@+id/tv_user_type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dp_12"
+                    android:background="@drawable/bg_bule900_circle_frame_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
 

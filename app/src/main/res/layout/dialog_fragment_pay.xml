@@ -2,11 +2,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:psd="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_view"
+    android:background="@android:color/transparent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/edge_margin">
@@ -15,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/edge_margin">
-
             <ImageView
                 android:id="@+id/iv_close"
                 android:layout_width="@dimen/dp_20"

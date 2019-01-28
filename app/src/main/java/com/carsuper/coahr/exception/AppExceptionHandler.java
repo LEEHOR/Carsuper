@@ -178,7 +178,7 @@ public class AppExceptionHandler implements Thread.UncaughtExceptionHandler {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_ACTIVITIES);
             if (pi != null) {
                 String versionName = pi.versionName == null ? "null" : pi.versionName;
-                String versionCode = pi.versionCode + "";
+                String versionCode = pi.getLongVersionCode() + "";
                 infos.put("versionName", versionName);
                 infos.put("versionCode", versionCode);
             }

@@ -7,8 +7,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.socks.library.KLog;
-import com.tencent.smtt.export.external.extension.interfaces.IX5WebViewExtension;
-import com.tencent.smtt.export.external.interfaces.IX5WebSettings;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
@@ -26,12 +24,13 @@ public class X5WebViewByMyShelf extends WebView {
     };
 
     public X5WebViewByMyShelf(Context context) {
-        super(context);
-        setBackgroundColor(85621);
+        super(context,null);
+
     }
 
     public X5WebViewByMyShelf(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+        setBackgroundColor(85621);
         this.setWebViewClient(client);
         initWebViewSettings();
         this.getView().setClickable(true);

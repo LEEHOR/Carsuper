@@ -29,6 +29,8 @@ public class Constants {
 
     //首页banner图链接
     public  static  final  String bannerUrl="https://shop.carsuper.cn/home/index/banner?id=";
+    //首页论坛地址
+    public static final String TribuneUrl="http://shop.carsuper.cn/H5/index.html";
     //登录后返回token
     public static String token = "";
     //登录返回Uid

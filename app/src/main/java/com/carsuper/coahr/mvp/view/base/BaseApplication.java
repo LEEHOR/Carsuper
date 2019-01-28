@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
+import com.carsuper.coahr.exception.AppExceptionHandler;
 import com.carsuper.coahr.umeng.UmengNotificationService;
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.github.promeg.tinypinyin.lexicons.android.cncity.CnCityDict;
@@ -69,7 +70,7 @@ public class BaseApplication extends MultiDexApplication implements HasActivityI
         //二维码工具
          ZXingLibrary.initDisplayOpinion(this);
 //         程序异常交由AppExceptionHandler来处理
-//        Thread.setDefaultUncaughtExceptionHandler(AppExceptionHandler.getInstance(this));
+     //   Thread.setDefaultUncaughtExceptionHandler(AppExceptionHandler.getInstance(this));
         // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
         PlatformConfig.setWeixin("wx89f3b1477df1aa39", "b3ad27916ad0fa404f5d1478f3cc0bc2");
         UMConfigure.init(this,
@@ -136,20 +137,18 @@ public class BaseApplication extends MultiDexApplication implements HasActivityI
      * 初始化X5Web
      */
     private void initX5WebView(){
-        QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
-
-            @Override
-            public void onViewInitFinished(boolean arg0) {
-                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-
-            }
-
+        //x5内核初始化接口
+        QbSdk.initX5Environment(getApplicationContext(), new QbSdk.PreInitCallback() {
             @Override
             public void onCoreInitFinished() {
+
             }
-        };
-        //x5内核初始化接口
-        QbSdk.initX5Environment(getApplicationContext(), cb);
+
+            @Override
+            public void onViewInitFinished(boolean b) {
+
+            }
+        });
 
     }
 

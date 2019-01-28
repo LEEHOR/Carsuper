@@ -57,8 +57,10 @@ public class CouponAdapter_test extends RecyclerView.Adapter<RecyclerView.ViewHo
         switch (viewType) {
             case 0:
                 return new StandbyCouponHolder(LayoutInflater.from(context).inflate(R.layout.recyclerview_item_coupon_standby, parent, false));
+
             case 1:
                 return new OverdueCouponHolder(LayoutInflater.from(context).inflate(R.layout.recyclerview_item_coupon_overdue, parent, false));
+
 
         }
         return null;
