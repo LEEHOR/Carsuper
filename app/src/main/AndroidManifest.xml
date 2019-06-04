@@ -97,7 +97,7 @@
             android:value="GlideModule" />
 
         <!--支付宝-->
-     <!--   <activity
+        <!--<activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"

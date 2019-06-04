@@ -3,6 +3,7 @@ package com.carsuper.coahr.mvp.view.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.support.v4.app.Fragment;
 
@@ -41,13 +42,6 @@ import dagger.android.support.HasSupportFragmentInjector;
 
 public class BaseApplication extends MultiDexApplication implements HasActivityInjector, HasSupportFragmentInjector {
 
-    public interface MsgDisplayListener {
-        void CODE_DOWNLOAD_SUCCESS(String Info,int HandlePatchVersion );
-        void CODE_LOAD_RELAUNCH(String Info,int HandlePatchVersion);
-        void CODE_LOAD_MFITEM(String Info,int HandlePatchVersion);
-        void Other(int code,String Info,int HandlePatchVersion);
-    }
-    private static MsgDisplayListener listeners;
     private ApplicationComponent applicationComponent;
     public static Context mContext;
     public static final String UPDATE_STATUS_ACTION = "com.cyht.wykc.action.UPDATE_STATUS";
@@ -69,6 +63,7 @@ public class BaseApplication extends MultiDexApplication implements HasActivityI
         mContext = getApplicationContext();
         //二维码工具
          ZXingLibrary.initDisplayOpinion(this);
+        MultiDex.install(this);
 //         程序异常交由AppExceptionHandler来处理
      //   Thread.setDefaultUncaughtExceptionHandler(AppExceptionHandler.getInstance(this));
         // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
@@ -165,42 +160,6 @@ public class BaseApplication extends MultiDexApplication implements HasActivityI
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-      /*  SophixManager.getInstance().setContext(this)
-                .setAppVersion(getAppVersion())
-                .setAesKey(null)
-                .setSecretMetaData("25263471-1","cf9f85bcca87c81018166bdbc4e50760","MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCEaP5AszlMSCAbTkAYYyl33caMb6+RS/WyIWIzFmbnphVcajrKU8GqAwmZ3ZT8GosT/PWaHwqeGrjDgiHZUkQp8sCtLbRcf+yJ2MV6lL4gAcKmbgAzCUDSgO2ZFAjzwL79Jl7vALzrwsSHkIJhW5lcTMEs1Gn15F3bN/w7N4/u9EsRr1Ud+YD0blgkNBlpMSeoiQzNgXSxfpfXf2Oh9JkhB+QmXgZz1tZz+44ZDeiThPVH8VBMCzWTLwoMEeg4O6NObhRs6pBYGWB47YE7BxkS+suPRH3zv4haeM7EftU5DqIkzOfdGVSjKTTMmHy7nmt4Q3h0wN+ZL6LiDQJZxSHVAgMBAAECggEAegobbZ7CzOAdV42D3fZnnic2fPHjq9OLHSdPzy5yokedoJP4o8sW0JAEJWDplIMSdNXNuMOrkZWnfetPL3J3iQJJPFTHzAnMBjFZsmWt5uo4chUo8eExcdOLKnAg4Cli3wiirz7K4bGeWiSDRyCZ9Ux5L8yH7S8Sop6zSBEqBF6bD23K9RVMgTb0xCSNJUXPx850H963JnefATFXeW9FuLIbp4Z17d4dkyYy4gdl55QG2Ovi07xqJnp72F9njFT3PM/46fkN9KjeCo6h4Dq4gcHbnofRz3u/421HTSdi/UGPpdXyMZatXvlvm28WWYH0+xwTJ1wb6dKqXhpDgnREgQKBgQD3bnq0oqoHjqVx2BU+G1tWipfVfaFfrCBU9uoC86KGtnMCX+IzEjhSwmbTBwZUNBU+x7XnP1UMMpPKHdtLqnVT7p1QKPRPgO98IYIfEbq20vZAumMJEN1bv0c/aNNebc9wmnDXLZqZyE/50zcCajklEBnurINQTT81mURzpuljWQKBgQCI/tSQVKhZe3gld1xfNDDDPjGEa081xKpn3T4NalRQMQL0AmKLGCnq2Cp2t4cDD2U1gVKI3wLDFy6xYbJzNS245WvxVX/bcLDOPOLLj1mah8jhbGNCtbLLa8FoUrUcAq3jv3cSBtkBqJbiXBEh23BM8i9pQLD1aRHSkoYyy8eO3QKBgQDA/k17g703s83cJH09Oj1eHTAc96bdZva5DvasYriMdtbyLTPUPgvskXF+fGY1W4KOu1tpCf8eSnz4E52vQT/Ovbm6gpc9RAaIPeKutTd7zsUA6+C/e4YNP/8kuHDVoLVC0VPeotWJybKH3HV1zsDP5eU0Qx8RjY8WEXxQ8Qnt0QKBgFZJpBtwp0UNZuS6ZL02g0xG3SuZ559nSyn2iYIrqgWEiWamJemUg7p/A2gZOvnrdYUY+qJpTTUSYf+qGJtGMJFYOAAfKVRPi52rbfJnTTnvMtEB0xeOmJpWOdD630ZQTbS4wUfidkb8KGVVNhlMPVTJ6qDx9UPuNSKb1dkiz4QlAoGASOJyEyhvqu1ktXlTTUJQsyipUbechzBlYnVJhOPF6XuCPmQr/vgy3vHQxF5vYlUCrnnu4ZKB5kKzeirijVMmiPc0gGopfSMrnWs3tZ2WBtOCmhRifvlIcsQh/wd4CmGT/nGYzdLH4dZ3TeJmking2mYJzTHpAT/eApGVlTXoR3k=")
-                .setEnableDebug(true)
-                .setPatchLoadStatusStub(new PatchLoadStatusListener() {
-                    @Override
-                    public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
-
-                        // 补丁加载回调通知
-                        if (code == PatchStatus.CODE_DOWNLOAD_SUCCESS) {
-                            // 表明补丁加载成功
-                            if (listeners != null) {
-                                listeners.CODE_DOWNLOAD_SUCCESS(info,handlePatchVersion);
-                            }
-                        } else if (code == PatchStatus.CODE_LOAD_RELAUNCH) {
-                            // 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
-                            // 建议: 用户可以监听进入后台事件, 然后应用自杀
-                            if (listeners != null) {
-                                listeners.CODE_LOAD_RELAUNCH(info,handlePatchVersion);
-                            }
-                        } else if (code == PatchStatus.CODE_LOAD_MFITEM) {////补丁SOPHIX.MF文件解析异常
-                            // 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
-                            //SophixManager.getInstance().cleanPatches();
-                            if (listeners != null) {
-                                listeners.CODE_LOAD_MFITEM(info,handlePatchVersion);
-                            }
-                        } else {
-                            // 其它错误信息, 查看PatchStatus类说明
-                            if (listeners != null) {
-                                listeners.Other(code,info,handlePatchVersion);
-                            }
-                        }
-                    }
-                }).initialize();*/
-
     }
     private String getAppVersion() {
         String appVersion;
@@ -212,7 +171,4 @@ public class BaseApplication extends MultiDexApplication implements HasActivityI
         return  appVersion;
     }
 
-    public static void setListener(MsgDisplayListener listener) {
-        listeners = listener;
-    }
 }

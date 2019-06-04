@@ -103,35 +103,7 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends Sup
         IntentFilter filter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(receiver, filter);
         getLocationPermission();
-        CreateDialog();
-        BaseApplication.setListener(new BaseApplication.MsgDisplayListener() {
-            @Override
-            public void CODE_DOWNLOAD_SUCCESS(String Info, int HandlePatchVersion) {
-                Log.d("热更新", "下载成功" + Info);
-            }
-
-            @Override
-            public void CODE_LOAD_RELAUNCH(final String Info, final int HandlePatchVersion) {
-                Log.d("热更新", "补丁加载成功" + Info);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        showDialog(Info, HandlePatchVersion);
-                    }
-                });
-            }
-
-            @Override
-            public void CODE_LOAD_MFITEM(String Info, int HandlePatchVersion) {
-                Log.d("热更新", "补丁加载失败" + Info);
-                //SophixManager.getInstance().cleanPatches();
-            }
-
-            @Override
-            public void Other(int code, String Info, int HandlePatchVersion) {
-                Log.d("热更新", "其他" + Info);
-            }
-        });
+       // CreateDialog();
         int screenWidth = ScreenUtils.getScreenWidth(BaseApplication.mContext);
         Constants.screenWidth=screenWidth;
     }
@@ -279,7 +251,6 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends Sup
             RequestPermissionUtils.requestPermission(BaseActivity.this, new OnRequestPermissionListener() {
                 @Override
                 public void PermissionSuccess(List<String> permissions) {
-                    // SophixManager.getInstance().queryAndLoadNewPatch();
                 }
 
                 @Override
@@ -289,12 +260,11 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends Sup
 
                 @Override
                 public void PermissionHave() {
-                    //  SophixManager.getInstance().queryAndLoadNewPatch();
+
                 }
             }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_WIFI_STATE);
 
         } else {
-            // SophixManager.getInstance().queryAndLoadNewPatch();
         }
     }
 }

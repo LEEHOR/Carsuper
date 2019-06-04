@@ -21,7 +21,6 @@ import com.carsuper.coahr.common.Constants;
 import com.carsuper.coahr.mvp.contract.MainActivityContract;
 import com.carsuper.coahr.mvp.presenter.MainActivityPresenter;
 import com.carsuper.coahr.mvp.view.base.BaseActivity;
-import com.carsuper.coahr.mvp.view.base.BaseApplication;
 import com.carsuper.coahr.mvp.view.main.MainFragment;
 
 import com.carsuper.coahr.mvp.view.myData.MyDataFragment;
@@ -29,12 +28,9 @@ import com.carsuper.coahr.mvp.view.shoppingMall.ShoppingMallFragment;
 import com.carsuper.coahr.mvp.view.store.StoreFragment;
 import com.carsuper.coahr.utils.ActivityManagerUtils;
 import com.carsuper.coahr.utils.NavigationBarUtils;
-import com.carsuper.coahr.utils.Permission.OnRequestPermissionListener;
-import com.carsuper.coahr.utils.Permission.RequestPermissionUtils;
 import com.carsuper.coahr.utils.StringUtils;
 import com.carsuper.coahr.widgets.bottomNavigation.MyBottomNavigation;
 
-import java.util.List;
 
 import javax.inject.Inject;
 

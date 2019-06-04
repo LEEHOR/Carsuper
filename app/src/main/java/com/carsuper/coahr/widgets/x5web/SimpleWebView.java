@@ -85,8 +85,8 @@ public class SimpleWebView extends WebView {
          */
         @Override
         public boolean shouldOverrideUrlLoading(com.tencent.smtt.sdk.WebView webView, String url) {
-            webView.loadUrl(url);
-            return true;
+           // webView.loadUrl(url);
+            return super.shouldOverrideUrlLoading(webView, url);
         }
         //在开始的时候，开始loadingDialog
         @Override

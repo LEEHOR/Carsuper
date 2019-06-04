@@ -92,6 +92,7 @@ public class CommodityOrderFragment extends BaseChildFragment<CommodityOrderCont
                 super.onScrollStateChanged(recyclerView, newState);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItemPosition + 1 == adapter.getItemCount() && orderListEntities.size() >= 10) {
                     if (!isLoading) {
+
                         rvCommodityOrder.postDelayed(new Runnable() {
                             @Override
                             public void run() {

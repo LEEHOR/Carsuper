@@ -5,12 +5,6 @@ import android.support.annotation.UiThread;
 import com.carsuper.coahr.common.RxManager;
 import com.carsuper.coahr.mvp.contract.base.BaseContract;
 import com.carsuper.coahr.mvp.model.ApiService;
-import com.socks.library.KLog;
-
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
-import java.lang.annotation.ElementType;
 import java.lang.ref.WeakReference;
 
 import javax.inject.Inject;
@@ -29,7 +23,7 @@ import retrofit2.Retrofit;
  * Author： hengzwd on 2018/6/5.
  * Email：hengzwdhengzwd@qq.com
  */
-public class BaseModel<P extends BaseContract.Presenter> implements BaseContract.Model {
+public abstract class BaseModel<P extends BaseContract.Presenter> implements BaseContract.Model {
 
 
     @Inject
@@ -133,6 +127,7 @@ public class BaseModel<P extends BaseContract.Presenter> implements BaseContract
 
 
     public abstract class SimpleDisposableSubscriber<T> extends DisposableSubscriber<T> {
+
         @Override
         public void onComplete() {
 

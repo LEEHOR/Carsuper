@@ -349,7 +349,6 @@ public abstract class BaseFragment<P extends BaseContract.Presenter> extends Sup
             public void run() {
                 PayTask alipay = new PayTask(_mActivity);
                 Map<String, String> result = alipay.payV2(orderString, true);
-
                 Message msg = new Message();
                 msg.what = SDK_PAY_FLAG;
                 msg.obj = result;
