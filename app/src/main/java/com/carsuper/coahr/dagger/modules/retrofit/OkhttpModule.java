@@ -3,6 +3,7 @@ package com.carsuper.coahr.dagger.modules.retrofit;
 import android.text.TextUtils;
 
 import com.carsuper.coahr.BuildConfig;
+import com.carsuper.coahr.R;
 import com.carsuper.coahr.common.Configuration;
 import com.carsuper.coahr.common.Constants;
 import com.carsuper.coahr.mvp.model.HttpLogging.MyHttpLogging;
@@ -11,10 +12,17 @@ import com.socks.library.KLog;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.security.cert.CertificateException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -35,7 +43,9 @@ public class OkhttpModule {
     public OkHttpClient providerOkHttpClient(){
 
 
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+//        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        OkHttpClient.Builder builder = SSLContextFactory.getSSLTrustAllOkHttpClientBuilder();
+//        builder.sslSocketFactory(SSLContextFactory.getSSLSocketFactory("BKS", R.raw.client));
         if (builder.interceptors() != null) {
             builder.interceptors().clear();
         }
@@ -60,7 +70,47 @@ public class OkhttpModule {
         return builder.build();
     }
 
+    private OkHttpClient.Builder getSSLTrustAllOkHttpClientBuilder() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        try {
+            // Create a trust manager that does not validate certificate chains
+            final TrustManager[] trustAllCerts = new TrustManager[] {
+                    new X509TrustManager() {
+                        @Override
+                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                        }
 
+                        @Override
+                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                        }
+
+                        @Override
+                        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                            return new java.security.cert.X509Certificate[]{};
+                        }
+                    }
+            };
+
+            // Install the all-trusting trust manager
+            final SSLContext sslContext = SSLContext.getInstance("SSL");
+            sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+            // Create an ssl socket factory with our all-trusting manager
+            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            builder.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0]);
+            builder.hostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            });
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return builder;
+    }
 
     @Singleton
     @Provides
@@ -84,13 +134,12 @@ public class OkhttpModule {
                         .build();
             }
         };
-        return new OkHttpClient.Builder()
-                .addNetworkInterceptor(interceptor)
+
+        OkHttpClient.Builder builder = SSLContextFactory.getSSLTrustAllOkHttpClientBuilder();
+        return builder.addNetworkInterceptor(interceptor)
                 .addNetworkInterceptor(cacheInterceptor)
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .build();
     }
-
-
 }
